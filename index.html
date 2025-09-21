@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>para mi pendeja 🌻🍁</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="envelope">
+      <div class="envelope-inner">
+
+        <!-- Frente de la carta -->
+         
+        <div class="envelope-front">
+          <div class="postage-stamp">
+            <svg fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 300 300" xml:space="preserve">
+              <path d="M253.98,257.652c0-8.568,8.568-17.748,17.136-18.361c-1.224-4.895-1.224-10.402-0.611-15.299 ..."></path>
+            </svg>
+          </div>
+          <div class="address">
+            <p><span>Para:</span> <span>Mi Princesa</span></p>
+            <p><span>De:</span> <span>Tu pendejo</span></p>
+          </div>
+        </div>
+
+        <!-- Reverso con la carta -->
+        <div class="envelope-back">
+          <div class="top-fold"></div>
+          <div class="letter">
+            <img src="https://img.freepik.com/vector-premium/pulgar-dedos-imprimir-marca-huella-dactilar-amor-corazon_53500-1839.jpg" 
+                 alt="love1" class="custom-image">
+
+            <p>Para mi Princesa Favorita 👑❤️ <span class="highlight">¡Te Amo!</span></p>
+
+            <img src="mochixd.png" alt="love2" class="custom-image2">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 🌼 Botón debajo de la carta -->
+    <p></p>
+    <p></p>
+    <button id="goToFlowers" class="letter-button"> Ver tus flores ->🌻</button>
+  </div>
+
+  <!-- 🎵 Audio oculto -->
+  <audio id="bg-music" loop>
+    <source src="flormusica.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script>
+    const envelope = document.querySelector(".envelope");
+    const music = document.getElementById("bg-music");
+
+    // Abrir/cerrar carta + reproducir música en el primer click
+    envelope.addEventListener("click", () => {
+      envelope.classList.toggle("open");
+
+      if (music.paused) {
+        music.play().catch(err => {
+          console.log("El navegador bloqueó el autoplay hasta interacción:", err);
+        });
+      }
+    });
+
+    // Redirigir al index1 al tocar el botón
+    document.getElementById("goToFlowers").addEventListener("click", () => {
+      window.location.href = "index1.html";
+    });
+  </script>
+</body>
+</html>
